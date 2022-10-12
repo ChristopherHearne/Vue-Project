@@ -1,9 +1,3 @@
-<script setup>
-import HomePage from './home/HomePage.vue'
-import RobotBuilder from './build/RobotBuilder.vue'
-import Search from './search/Search.vue';
-</script>
-
 <template>
   <header>
     <nav>
@@ -20,6 +14,24 @@ import Search from './search/Search.vue';
   </main>
 </template>
 
+<script>
+import HomePage from './home/HomePage.vue'
+import RobotBuilder from './build/RobotBuilder.vue'
+import Search from './search/Search.vue';
+export default {
+  name: 'App',
+  components: {
+    RobotBuilder
+  },
+  data(){
+    return {userName: 'Chrissy Fish'}
+  },
+  provide() {
+    return {userName: this.userName}
+  }
+}
+
+</script>
 
 <style>
   body{

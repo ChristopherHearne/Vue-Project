@@ -38,7 +38,8 @@
                 return ['left', 'right', 'top', 'bottom', 'center'].includes(value)
             }
         }
-    }, 
+    },
+    inject: ['userName'], 
     data() {
       return { selectedPartIndex: 0, showPartInfo: false};
     },
