@@ -24,7 +24,7 @@
     const incrementedIndex = index + 1;
     return incrementedIndex > length - 1 ? 0 : incrementedIndex;
   }
-  
+  // TODO: Make this dynamic
   export default {
     props: {
         parts: {
