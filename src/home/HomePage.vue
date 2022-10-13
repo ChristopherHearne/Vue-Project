@@ -13,7 +13,7 @@ defineProps({
       <img class="robot" src="../assets/robot-home.png" />
     </div>
     <div class="get-started">
-      <a href="">{{msg}}</a>
+      <router-link to="/build">Get started building your first robot</router-link>
     </div>
   </div>
 </template>

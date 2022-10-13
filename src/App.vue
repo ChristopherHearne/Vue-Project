@@ -3,8 +3,15 @@
     <nav>
       <ul>
         <li class="nav-item">
-          <img class="logo" src="./assets/build-a-bot-logo.png">
-          Build-a-Bot
+          <router-link :to="{name: 'Home'}" class="router-link" exact active-class="foo">
+            <img class="logo" src="./assets/build-a-bot-logo.png">
+            Build-a-Bot
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link :to="{name: 'RobotBuilder'}" class="router-link" exact active-class="foo">
+            Build
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -61,5 +68,18 @@ ul {
 .logo {
   vertical-align: middle;
   height: 30px;
+}
+
+.router-link{
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.router-link-active{ /* Standard Vue Class for changing a router link style*/
+  color: white; 
+}
+
+.foo{
+  color: white; 
 }
 </style>
