@@ -8,5 +8,10 @@ export default createStore({
 		addRobotToCart(state, robot){
 			state.cart.push(robot)
 		}
+	},
+	getters: {
+		cartSaleItemsGetter(state){
+			return state.cart.filter((item) => item.head.onSale)
+		}
 	}
 })

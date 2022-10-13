@@ -9,6 +9,7 @@ import RobotTorsos from '../parts/RobotTorsos.vue'
 import RobotBases from '../parts/RobotBases.vue'
 import SidebarStandard from '../sidebars/SidebarStandard.vue'
 import SidebarBuild from '../sidebars/SidebarBuild.vue'
+import ShoppingCart from '../cart/ShoppingCart.vue'
 
 export default createRouter({ // Order of routes is important, it wont know the browse-route if it was below the :id route
     history: createWebHistory(), 
@@ -64,5 +65,10 @@ export default createRouter({ // Order of routes is important, it wont know the 
             const isValidId = Number.isInteger(Number(to.params.index))
             next(isValidId) // Route guard for preventing loading a component when our index parameter is incorrect
         }
-    },]
+    },
+    {
+        path: '/cart',
+        name: 'Cart',
+        component: ShoppingCart
+    }]
 })
