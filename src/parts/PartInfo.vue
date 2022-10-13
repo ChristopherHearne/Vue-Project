@@ -7,16 +7,24 @@
     </div>
 </template>
 <script>
+import parts from '../build/data/parts'
 export default {
     name: 'PartInfo',
-    data(){
-        return {
-            part: {
-                title: 'Part Title',
-                description: 'Description'
+    props: {
+        partType: {type: String}, 
+        id: {
+            type: [Number, String],
+            validator(value){
+                return Number.isInteger(Number(value))
             }
+        }, 
+    },
+    computed: {
+        part(){
+            const {partType, index} = this
+            return parts[partType].find(part => part.id === +index)
         }
-    }
+    },
 }
 </script>
 <style lang="">

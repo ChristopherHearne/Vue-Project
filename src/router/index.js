@@ -16,8 +16,9 @@ export default createRouter({
         component: RobotBuilder,
     },
     {
-        path: '/parts',
+        path: '/parts/:partType/:index',
         name: 'Parts',
         component: PartInfo,
+        props: true, 
     }],
 })
