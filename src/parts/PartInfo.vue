@@ -12,7 +12,7 @@ export default {
     name: 'PartInfo',
     props: {
         partType: {type: String}, 
-        id: {
+        index: {
             type: [Number, String],
             validator(value){
                 return Number.isInteger(Number(value))
