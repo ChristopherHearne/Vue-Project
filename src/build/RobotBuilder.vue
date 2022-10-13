@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div v-if="availableParts" class="content">
     <div class="part-info" id="part-info">
 
     </div>
@@ -76,7 +76,6 @@ export default {
   },
   data() {
     return {
-      availableParts,
       cart: [],
       selectedRobot: {
           head: {},
