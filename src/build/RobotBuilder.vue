@@ -57,13 +57,15 @@
 </template>
 
 <script>
-import availableParts from './data/parts'
 import createdHookMixin from './created-hook-mixin'
 import PartSelector from './PartSelector.vue'
 import CollapsibleSection from '../shared/CollapsibleSection.vue';
 
 export default {
   name: "RobotBuilder",
+  created(){
+    this.$store.dispatch('getParts')
+  },
   beforeRouteLeave (to, from, next) {
     if(this.addedToCart){
       next(true)
@@ -93,6 +95,9 @@ export default {
     },
     saleBorderClass() {
       return this.selectedRobot.head.onSale ? "sale-border" : "";
+    },
+    availableParts(){
+      return this.$store.state.parts
     }
   },
   mixins: [createdHookMixin],
