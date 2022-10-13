@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../home/HomePage.vue'
 import RobotBuilder from '../build/RobotBuilder.vue'
 import PartInfo from '../parts/PartInfo.vue'
@@ -11,7 +11,7 @@ import SidebarStandard from '../sidebars/SidebarStandard.vue'
 import SidebarBuild from '../sidebars/SidebarBuild.vue'
 
 export default createRouter({ // Order of routes is important, it wont know the browse-route if it was below the :id route
-    history: createWebHashHistory(), 
+    history: createWebHistory(), 
     routes: [{
         path: '/',
         name: 'Home',
@@ -59,6 +59,10 @@ export default createRouter({ // Order of routes is important, it wont know the 
         path: '/parts/:partType/:index',
         name: 'Parts',
         component: PartInfo,
-        props: true, 
+        props: true,
+        beforeEnter(to, from, next){ // To is the route trying to be accessed, Next is a check for allowing the new route to be loaded. 
+            const isValidId = Number.isInteger(Number(to.params.index))
+            next(isValidId) // Route guard for preventing loading a component when our index parameter is incorrect
+        }
     },]
 })
