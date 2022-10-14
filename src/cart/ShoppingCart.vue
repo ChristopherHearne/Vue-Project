@@ -57,7 +57,7 @@
 			return this.$store.state.robots.cart
 		},
 		cartSaleItems(){
-			return this.$store.getters.cartSaleItemsGetter
+			return this.$store.getters['robots/cartSaleItemsGetter']
 		}
 	}
   };
