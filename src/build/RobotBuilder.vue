@@ -22,10 +22,6 @@
       <button class="add-to-cart" @click="addToCart()">Add to Cart</button>
     </div>
     <div class="top-row">
-      <!-- <div class="robot-name">
-          {{selectedRobot.head.title}}
-          <span v-if="selectedRobot.head.onSale" class="sale">Sale!</span>
-        </div> -->
       <PartSelector :parts="availableParts.heads" position="top" @partSelected="part => selectedRobot.head=part" />
     </div>
     <div class="middle-row">
